@@ -1,0 +1,26 @@
+{
+  "name": "students-hub",
+  "version": "1.0.0",
+  "description": "The codebase for the student hub for ACA ",
+  "main": "index.js",
+  "author": "Favour Max-Oti <maxotif@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspace": [
+    "api",
+    "web"
+  ],
+  "scripts": {
+    "dev": "concurrently \"yarn run web:dev\"  \"yarn run api:dev\"",
+    "web:dev": "cd web && yarn dev",
+    "api:dev": "cd api && yarn dev",
+    "api:test": "cd api && yarn run test",
+    "api:lint": "cd api && yarn run lint",
+    "lint": "",
+    "web:lint": "cd web && yarn run lint",
+    "web:test": "cd web && yarn run test"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
+}
