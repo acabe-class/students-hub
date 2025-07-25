@@ -6,7 +6,7 @@ import config from "./lib/config.lib.js";
   try
   {
     const port = parseInt(config.getOrThrow("PORT"));
-    await connectToDatabase()
+    await connectToDatabase();
     server.listen(port, () => {
       console.info(`Server is running on port: ${port}`);
     });
@@ -15,3 +15,4 @@ import config from "./lib/config.lib.js";
     process.exit(1);
   }
 })();
+// 
