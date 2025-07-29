@@ -18,7 +18,8 @@
     "api:lint": "cd api && yarn run lint",
     "lint": "",
     "web:lint": "cd web && yarn run lint",
-    "web:test": "cd web && yarn run test"
+    "web:test": "cd web && yarn run test",
+    "db:seed": "cd api &&  yarn run db:seed"
   },
   "devDependencies": {
     "concurrently": "^9.2.0"

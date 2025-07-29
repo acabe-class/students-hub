@@ -11,6 +11,7 @@ export const Cohort = sequelize.define("Cohort", {
     name: {
         type: DataTypes.STRING,
         allowNull: false,
+        unique: true
     },
     start_date: {
         type: DataTypes.DATE,
