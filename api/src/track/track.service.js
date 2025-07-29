@@ -1,4 +1,4 @@
-import { Track } from "../models/track.model.js";
+import { Track } from "../database/models/track.model.js";
 import { ConflictError, NotFoundError } from "../lib/errors.lib.js";
 
 export const getAllTracks = async () => {

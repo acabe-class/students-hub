@@ -1,4 +1,4 @@
-import { Bell, User, Menu, MessageSquare, Search, LogOut } from "lucide-react";
+import { Bell, User, Menu, MessageSquare, Search, LogOut, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -129,6 +129,17 @@ export function Header({ onMenuClick, userRole }: HeaderProps) {
           <DropdownMenuContent align="end" className="w-56">
             <DropdownMenuLabel>My Account</DropdownMenuLabel>
             <DropdownMenuSeparator />
+            {user?.roles.includes('admin') && (
+              <>
+                <DropdownMenuItem asChild>
+                  <Link to="/admin">
+                    <Settings className="mr-2 h-4 w-4" />
+                    Admin Dashboard
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+              </>
+            )}
             <DropdownMenuItem asChild>
               <Link to="/profile">
                 <User className="mr-2 h-4 w-4" />
