@@ -1,0 +1,277 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ACA Student Hub Design System - Based on AttueyiCoding Academy Brand
+All colors MUST be HSL. Teal primary, coral accents, professional educational theme.
+*/
+
+@layer base {
+  :root {
+    /* ACA Brand Colors */
+    --background: 0 0% 98%;
+    --foreground: 210 20% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 20% 15%;
+
+    /* ACA Teal Primary - Brand Color */
+    --primary: 184 90% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 184 90% 55%;
+    --primary-dark: 184 90% 35%;
+
+    /* Coral Accent - ACA Secondary */
+    --accent: 10 85% 58%;
+    --accent-foreground: 0 0% 100%;
+    --accent-glow: 10 85% 68%;
+
+    --secondary: 210 15% 96%;
+    --secondary-foreground: 210 20% 15%;
+
+    --muted: 210 15% 96%;
+    --muted-foreground: 210 10% 45%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 70% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 45 95% 55%;
+    --warning-foreground: 45 20% 10%;
+
+    --border: 210 15% 90%;
+    --input: 210 15% 95%;
+    --ring: 184 90% 45%;
+
+    --radius: 0.75rem;
+
+    /* ACA Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(210 15% 98%));
+
+    /* ACA Shadows */
+    --shadow-primary: 0 10px 30px -5px hsl(var(--primary) / 0.2);
+    --shadow-accent: 0 10px 30px -5px hsl(var(--accent) / 0.2);
+    --shadow-card: 0 4px 20px -2px hsl(210 20% 15% / 0.08);
+    --shadow-glow: 0 0 30px hsl(var(--primary) / 0.3);
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 210 20% 15%;
+    --sidebar-primary: 184 90% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 15% 96%;
+    --sidebar-accent-foreground: 210 20% 15%;
+    --sidebar-border: 210 15% 90%;
+    --sidebar-ring: 184 90% 45%;
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .dark {
+    /* ACA Dark Mode */
+    --background: 210 25% 8%;
+    --foreground: 210 15% 92%;
+
+    --card: 210 25% 10%;
+    --card-foreground: 210 15% 92%;
+
+    --popover: 210 25% 10%;
+    --popover-foreground: 210 15% 92%;
+
+    --primary: 184 90% 55%;
+    --primary-foreground: 210 25% 8%;
+    --primary-glow: 184 90% 65%;
+    --primary-dark: 184 90% 45%;
+
+    --accent: 10 85% 65%;
+    --accent-foreground: 210 25% 8%;
+    --accent-glow: 10 85% 75%;
+
+    --secondary: 210 25% 15%;
+    --secondary-foreground: 210 15% 92%;
+
+    --muted: 210 25% 15%;
+    --muted-foreground: 210 10% 65%;
+
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 210 25% 8%;
+
+    --success: 142 70% 55%;
+    --success-foreground: 210 25% 8%;
+
+    --warning: 45 95% 65%;
+    --warning-foreground: 45 20% 10%;
+
+    --border: 210 25% 18%;
+    --input: 210 25% 15%;
+    --ring: 184 90% 55%;
+
+    /* Dark Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(210 25% 12%));
+
+    /* Dark Shadows */
+    --shadow-primary: 0 10px 30px -5px hsl(var(--primary) / 0.3);
+    --shadow-accent: 0 10px 30px -5px hsl(var(--accent) / 0.3);
+    --shadow-card: 0 4px 20px -2px hsl(0 0% 0% / 0.2);
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.4);
+
+    /* Dark Sidebar */
+    --sidebar-background: 210 25% 10%;
+    --sidebar-foreground: 210 15% 92%;
+    --sidebar-primary: 184 90% 55%;
+    --sidebar-primary-foreground: 210 25% 8%;
+    --sidebar-accent: 210 25% 15%;
+    --sidebar-accent-foreground: 210 15% 92%;
+    --sidebar-border: 210 25% 18%;
+    --sidebar-ring: 184 90% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* ACA Typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+
+  h1 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl lg:text-4xl;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+}
+
+@layer components {
+  /* ACA Component Styles */
+  .card-elevated {
+    @apply bg-gradient-to-br from-card to-card/80 backdrop-blur-sm;
+    box-shadow: var(--shadow-card);
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary to-primary-glow text-primary-foreground;
+    box-shadow: var(--shadow-primary);
+    transition: var(--transition-smooth);
+  }
+
+  .btn-primary:hover {
+    @apply scale-105;
+    box-shadow: var(--shadow-glow);
+  }
+
+  .btn-accent {
+    @apply bg-gradient-to-r from-accent to-accent-glow text-accent-foreground;
+    box-shadow: var(--shadow-accent);
+    transition: var(--transition-smooth);
+  }
+
+  .btn-accent:hover {
+    @apply scale-105;
+  }
+
+  .progress-bar {
+    @apply bg-gradient-to-r from-primary via-primary-glow to-accent;
+    box-shadow: 0 0 15px hsl(var(--primary) / 0.4);
+  }
+
+  .gamification-card {
+    @apply bg-gradient-to-br from-card to-card/50 backdrop-blur-md border border-border/50;
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-bounce);
+  }
+
+  .gamification-card:hover {
+    @apply scale-105 border-primary/20;
+    box-shadow: var(--shadow-glow);
+  }
+
+  .leaderboard-gold {
+    @apply bg-gradient-to-r from-yellow-400 to-yellow-600 text-yellow-900;
+  }
+
+  .leaderboard-silver {
+    @apply bg-gradient-to-r from-gray-300 to-gray-500 text-gray-900;
+  }
+
+  .leaderboard-bronze {
+    @apply bg-gradient-to-r from-orange-400 to-orange-600 text-orange-900;
+  }
+}
+
+@layer utilities {
+  /* ACA Animation Classes */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% { 
+      opacity: 1;
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.2);
+    }
+    50% { 
+      opacity: 0.8;
+      box-shadow: 0 0 30px hsl(var(--primary) / 0.4);
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}
