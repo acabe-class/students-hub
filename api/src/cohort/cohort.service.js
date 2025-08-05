@@ -24,9 +24,15 @@ export const createCohort = async (payload) => {
 };
 
 export const updateCohort = async (id, payload) => {
-  return await Cohort.updateOne({ where: { id } }, payload);
+  const cohort = await Cohort.findByPk(id);
+  if (!cohort) throw new NotFoundError("Cohort not found");
+  
+  return await cohort.update(payload);
 };
 
 export const deleteCohort = async (id) => {
-  return await Cohort.dstroy({ where: { id } });
+  const cohort = await Cohort.findByPk(id);
+  if (!cohort) throw new NotFoundError("Cohort not found");
+  
+  return await cohort.destroy();
 };

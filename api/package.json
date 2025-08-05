@@ -4,10 +4,15 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:integration": "jest --testPathPattern=integration",
+    "test:unit": "jest --testPathPattern=unit",
     "start": "node src/main.js",
     "dev": "nodemon",
-    "db:seed": "node src/database/seeders/seed.js"
+    "db:seed": "node src/database/seeders/seed.js",
+    "test:api": "node test-api.js"
   },
   "keywords": [],
   "author": "",

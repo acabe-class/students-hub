@@ -36,6 +36,32 @@ const initializeModels = async () => {
     }
   }
 
+  // Define associations
+  if (db.User && db.Profile) {
+    db.User.hasOne(db.Profile, { foreignKey: 'user_id', as: 'profile' });
+    db.Profile.belongsTo(db.User, { foreignKey: 'user_id', as: 'user' });
+  }
+
+  if (db.Profile && db.Track) {
+    db.Profile.belongsTo(db.Track, { foreignKey: 'track_id', as: 'track' });
+    db.Track.hasMany(db.Profile, { foreignKey: 'track_id', as: 'profiles' });
+  }
+
+  if (db.User && db.ScholarshipApplication) {
+    db.User.hasMany(db.ScholarshipApplication, { foreignKey: 'user_id', as: 'applications' });
+    db.ScholarshipApplication.belongsTo(db.User, { foreignKey: 'user_id', as: 'applicant' });
+  }
+
+  if (db.Track && db.ScholarshipApplication) {
+    db.Track.hasMany(db.ScholarshipApplication, { foreignKey: 'track_id', as: 'applications' });
+    db.ScholarshipApplication.belongsTo(db.Track, { foreignKey: 'track_id', as: 'track' });
+  }
+
+  if (db.User && db.ScholarshipApplication) {
+    db.User.hasMany(db.ScholarshipApplication, { foreignKey: 'reviewed_by', as: 'reviewedApplications' });
+    db.ScholarshipApplication.belongsTo(db.User, { foreignKey: 'reviewed_by', as: 'reviewer' });
+  }
+
   Object.keys(db).forEach((modelName) => {
     if (db[modelName].associate) {
       db[modelName].associate(db);
